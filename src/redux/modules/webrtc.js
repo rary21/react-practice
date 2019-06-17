@@ -13,13 +13,16 @@ export default function reducer(state = initialState, action = {}) {
     case STORE_VIDEO:
       return {
         ...state,
-        videoSrc: action.srcObject
+        srcObject: action.srcObject
       };
     default: return state;
   }
 }
 
 // Action Creators
-export function storeVideo() {
-  return { type: STORE_VIDEO };
+export function storeVideo(srcObject) {
+  return {
+    type: STORE_VIDEO,
+    srcObject: srcObject,
+  };
 }
